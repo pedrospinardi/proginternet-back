@@ -1,0 +1,23 @@
+use('proginternet')
+
+db.categorias.insertOne({
+  "nome":"Cantinas",
+  "status":"ativo",
+  "foto":{
+    "originalName":"massas.png",
+    "path":"public/uploads/massas.png",
+    "size": 20771,
+    "mimetype":"image/png"
+  }
+})
+
+db.categorias.insertOne({
+  "nome":"patio",
+  "status":"ativo",
+  "foto":{
+    "originalName":"assas.png",
+    "path":"public/uploads/assas.png",
+    "size": 80771,
+    "mimetype":"image/png"
+  }
+})
