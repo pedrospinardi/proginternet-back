@@ -1,39 +1,55 @@
-//Teste de requisições REST - Categorias
-@baseUrl = http://localhost:4000/categorias
-
-@id = 
-
+//Teste de Requisições REST - Categorias
+@baseURL = http://localhost:4000
+@id = 609043ac602c7f03076304f5
 ###
-//GET - Listar todas as categorias
-
-GET {{baseUrl}}
+// GET - Lista todas as categorias
+GET {{baseURL}}/categorias
 Content-Type: application/json
 
 ###
-// GET - Lista a categoria pelo id
+// GET - Lista apenas uma categoria pelo id
+GET {{baseURL}}/categorias/{{id}}
+Content-Type: application/json
 
-DELETE {{baseUrl}}/{{id}}
+###
+// GET - Lista apenas uma categoria pelo id - INVÁLIDO
+GET {{baseURL}}/categorias/44
 Content-Type: application/json
 
 ###
 // POST - Inclui uma nova categoria
-
-POST {{baseUrl}}
+POST {{baseURL}}/categorias
 Content-Type: application/json
 
 {
-    "name":"Sushi",
-    "status":"ativo"
+    "nome": "Churrascarias",
+    "status": "ativo"
 }
 
-###
-// PUT - Altera uma categoria
+### 
+// DELETE - Apaga uma categoria através do id informado
+DELETE {{baseURL}}/categorias/{{id}}
+Content-Type: application/json
 
-PUT {{baseUrl}}
+###
+// PUT - Altera uma categoria pelo ID
+PUT {{baseURL}}/categorias
 Content-Type: application/json
 
 {
-    "_id":"6091eba8b30375016862d90a",
-    "name":"patio",
-    "status":"inativo"
+    "_id": "6090376b1f4ecc016577707e", 
+    "nome": "Cantinas Italianas",
+    "status": "ativo"
+}
+
+
+###
+// PUT - Altera uma categoria pelo ID - INVÁLIDO
+PUT {{baseURL}}/categorias
+Content-Type: application/json
+
+{
+    "_id": "9999", 
+    "nome": "Cantinas Italianas 2",
+    "status": "ativo"
 }
